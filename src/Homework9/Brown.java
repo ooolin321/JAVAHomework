@@ -39,6 +39,7 @@ class Account {
 class Deposit extends Thread {
     Account account;
 
+
     public Deposit(Account account) {
         this.account = account;
     }
@@ -52,16 +53,18 @@ class Deposit extends Thread {
 class Withdraw extends Thread {
     Account account;
 
+
     public Withdraw(Account account) {
         this.account = account;
     }
 
     public void run() {
-        for (int i = 1; i <= 10; i++)
+        for (int i = 0; i <= 10; i++) {
             account.withdraw(2000); // 每次領2000
+        }
     }
-
 }
+
 
 public class Brown {
     public static void main(String[] args) {
@@ -77,6 +80,5 @@ public class Brown {
         } catch (Exception e) {
         }
         mom.stop();
-
     }
 }
